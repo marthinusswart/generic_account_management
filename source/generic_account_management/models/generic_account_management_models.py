@@ -10,6 +10,7 @@ class Account(db.Model):
     tenant_key = db.Column(db.String(150))
     account_type = db.Column(db.String(20))
     balance = db.Column(db.Float)
+    credit_limit = db.Column(db.Float)
     account_number = db.Column(db.String(150))
 
     def as_json(self):
@@ -19,6 +20,7 @@ class Account(db.Model):
             'description': self.description,
             'account_type': self.account_type,
             'balance': self.balance,
+            'credit_limit': self.credit_limit,
             'creation_date': self.creation_date,
             'account_number': self.account_number,
             'tenant_key': self.tenant_key
